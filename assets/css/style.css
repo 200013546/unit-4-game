@@ -1,0 +1,76 @@
+body {
+    background-image: url(../images/abstract-background-bubble.jpeg);
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px;
+}
+
+  #game-title {
+    color: white;
+    background-color: #CF7432;
+    width: 220px;
+    height: 60px;
+    text-align: center;
+    padding-top: 15px;
+  }
+  
+  #description {
+    color: green;
+    background-color: #fce7ce;
+    width: 400px;
+    height: 370px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+#number-to-guess {
+    color: rgb(56, 19, 90);
+    background-color: #39C982;
+    width: 180px;
+    height: 80px;
+    font-size: 30px;
+    margin-top: 10px;
+    float: left;
+}
+
+#status {
+    color: green;
+    background-color: #00FBFD;
+    width: 100px;
+    height: 80px;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 4px;
+    float: left;
+    font-size: 18px;
+}
+
+.crystal-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+    margin-right: 4px;
+  }
+
+.crystals-images {
+    clear: both;
+}
+
+#yourscore {
+    color: white;
+    background-color: #00A296;
+    width: 180px;
+    height: 23px;
+    font-size: 30px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#totalscore {
+    color: white;
+    background-color: #00A296;
+    width: 180px;
+    height: 80px;
+    font-size: 30px;
+    margin-top: 2px;
+    font-size: 30px;
+}
