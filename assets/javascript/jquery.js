@@ -15,13 +15,13 @@ $(document).ready(function() {
         var numberOptions = [];
         //    crystalValue = '';
 
-        // Need to generate a random number to shoot for
-        targetNumber = Math.floor(Math.random() * 10) + 30;
+        // Need to generate a random odd number to shoot for
+        targetNumber = (Math.floor(Math.random() * 5) + 15) * 2 + 1;
         $("#number-to-guess").text(targetNumber);
 
         // We need to generate random numbers for each crystal
         for (var c = 0; c < 4; c++) {
-            var numberRandom = Math.floor(Math.random() * 10) + 1;
+            var numberRandom = Math.floor(Math.random() * 8) + 3;
             if (numberOptions.indexOf(numberRandom) === -1) {
                 numberOptions.push(numberRandom);
                 console.log(numberRandom);
