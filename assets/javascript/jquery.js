@@ -5,15 +5,16 @@ $(document).ready(function() {
     var targetNumber = 0;
     var wins = 0;
     var losses = 0;
-    // var crystalValue = '';
-    // var numberOptions = [];
+    var audioElementw = document.createElement("audio");
+    audioElementw.setAttribute("src", "assets/sounds/TaDa.mp3");
+    var audioElementl = document.createElement("audio");
+    audioElementl.setAttribute("src", "assets/sounds/beep-10.mp3");
 
     // Reset for a new game
     function resetStatus() {
         // Reset variables here
         counter = 0;
         var numberOptions = [];
-        //    crystalValue = '';
 
         // Need to generate a random odd number to shoot for
         targetNumber = (Math.floor(Math.random() * 5) + 15) * 2 + 1;
@@ -56,7 +57,6 @@ $(document).ready(function() {
         $("#crystals").append(imageCrystal);
         }
         console.log("Reset Complete");
-        // $("#totalscore").empty();
         $("#totalscore").text(counter);
 
         gamepart();
@@ -80,13 +80,13 @@ function gamepart() {
 
         // All of the same game win-lose logic applies. So the rest remains unchanged.
         $("#totalscore").text(counter);
-        // alert("New score: " + counter);
 
         if (counter === targetNumber) {
             $("#results").text("You Win!!");
             wins++;
             console.log("WINS " + wins);
             $("#win").text("Wins: " + wins);
+            audioElementw.play();
             resetStatus();
         }
         else if (counter >= targetNumber) {
@@ -94,10 +94,12 @@ function gamepart() {
             losses++;
             console.log("LOSSES " + losses);
             $("#loss").text("Losses: " + losses);
+            audioElementl.play();
             resetStatus();
         }
     });
     }
+
 // Start with all new values
 
 resetStatus();
