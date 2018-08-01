@@ -1,5 +1,3 @@
-$(document).ready(function() {
-
     // Set global variables
     var counter = 0;
     var targetNumber = 0;
@@ -21,13 +19,11 @@ $(document).ready(function() {
         $("#number-to-guess").text(targetNumber);
 
         // We need to generate random numbers for each crystal
-        for (var c = 0; c < 4; c++) {
+        while (numberOptions.length < 4) {
             var numberRandom = Math.floor(Math.random() * 8) + 3;
             if (numberOptions.indexOf(numberRandom) === -1) {
                 numberOptions.push(numberRandom);
                 console.log(numberRandom);
-            } else {
-                c--;
             }   
         }
 
@@ -39,23 +35,23 @@ $(document).ready(function() {
         // Add the new ones again
         for (var i = 0; i < numberOptions.length; i++) {
 
-        // For each iteration, we will create an imageCrystal
-        var imageCrystal = $("<img>");
+            // For each iteration, we will create an imageCrystal
+            var imageCrystal = $("<img>");
 
-        // First each crystal will be given the class ".crystal-image".
-        // This will allow the CSS to take effect.
-        imageCrystal.addClass("crystal-image");
+            // First each crystal will be given the class ".crystal-image".
+            // This will allow the CSS to take effect.
+            imageCrystal.addClass("crystal-image");
 
-        // Each imageCrystal will be given a src link to the crystal image
-        imageCrystal.attr("src", "assets/images/crystal" + i + ".png");
+            // Each imageCrystal will be given a src link to the crystal image
+            imageCrystal.attr("src", "assets/images/crystal" + i + ".png");
 
-        // Each imageCrystal will be given a data attribute called data-crystalValue.
-        // This data attribute will be set equal to the array value.
-        imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+            // Each imageCrystal will be given a data attribute called data-crystalValue.
+            // This data attribute will be set equal to the array value.
+            imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
-        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-        $("#crystals").append(imageCrystal);
-        }
+            // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
+            $("#crystals").append(imageCrystal);
+            }
         console.log("Reset Complete");
         $("#totalscore").text(counter);
 
@@ -89,7 +85,7 @@ function gamepart() {
             audioElementw.play();
             resetStatus();
         }
-        else if (counter >= targetNumber) {
+        else if (counter > targetNumber) {
             $("#results").text("You Lost!!");
             losses++;
             console.log("LOSSES " + losses);
@@ -103,5 +99,3 @@ function gamepart() {
 // Start with all new values
 
 resetStatus();
-
-});
